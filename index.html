@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Seu Nome - Desenvolvedor Full Stack</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <div class="logo">Matheus Souza</div>
+      <div class="mobile-toggle" id="mobile-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+      <div class="nav-links" id="nav-links">
+        <a href="#home">Início</a>
+        <a href="#sobre">Sobre Mim</a>
+        <a href="#formacao">Formação</a>
+        <a href="#portfolio">Portfólio</a>
+        <a href="#contato">Contato</a>
+      </div>
+    </header>
+  </nav>
+  </header>
+
+  <main>
+
+    <!-- Hero -->
+    <section id="home">
+        <div class="hero-text">
+          <h1>Olá, sou Matheus</h1>
+          <p>Desenvolvedor Full Stack | Apaixonado por criar soluções digitais incríveis</p>
+          <p>Transformo ideias em experiências digitais com código limpo, moderno e escalável.</p>
+        </div>
+        <div class="hero-buttons">
+          <a href="#contato" class="btn">Entrar em Contato</a>
+          <a href="#portfolio" class="btn" style="background:transparent;border:2px solid var(--primary);margin-left:10px;color: var(--primary);">Ver Projetos →</a>
+        </div>
+    </section>
+
+    <!-- Sobre Mim -->
+    <section id="sobre">
+      <h2>Sobre Mim</h2>
+      <div class="about-content">
+        <div>
+          <p>Sou um desenvolvedor full stack com mais de 5 anos de experiência, especializado em React, Node.js, TypeScript e soluções cloud. Gosto de criar aplicações performáticas, acessíveis e com excelente experiência do usuário.</p>
+          <p>Trabalho com metodologias ágeis, clean code e sempre busco as melhores práticas do mercado. Quando não estou codando, gosto de tocar violão, jogar, ler e brincar com os meus gatos.</p>
+          
+          <div class="skills">
+            <span class="skill-tag">React</span>
+            <span class="skill-tag">Next.js</span>
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">Typescript</span>
+            <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">AWS</span>
+            <span class="skill-tag">Tailwind CSS</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formação -->
+    <section id="formacao" style="background:#f8fafc;">
+      <h2>Formação Acadêmica & Cursos</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h3>Análise e Desenvolvimento de Sistemas</h3>
+            <p><strong>Escola SENAI de Informática</strong> • 2019 - 2020</p>
+            <p>Formação técnica com foco em desenvolvimento web full stack e engenharia de software.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h3>Ciência de Dados</h3>
+            <p><strong>UNINTER</strong> • 2025</p>
+            <p>Formação superior em andamento.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Contato -->
+    <section id="contato">
+      <h2>Vamos trabalhar juntos?</h2>
+      <div class="contact-content">
+        <div class="contact-form-container">
+          <div class="contact-form-header">
+            <h3>Entre em contato</h3>
+            <p>Estou disponível para novos projetos freelance ou oportunidades full-time. Me mande uma mensagem!</p>
+          </div>
+          
+          <form id="contact-form">
+            <input type="text" placeholder="Seu nome" required>
+            <input type="email" placeholder="Seu e-mail" required>
+            <input type="text" placeholder="Assunto" required>
+            <textarea placeholder="Sua mensagem..." required></textarea>
+            <button type="submit" class="btn">Enviar Mensagem</button>
+          </form>
+        </div>
+        
+        <div class="social">
+          <h3>Redes & Contato</h3>
+          <p><i class="fas fa-envelope"></i> matheus.souza.ctt@gmail.com</p>
+          <p><i class="fas fa-map-marker-alt"></i> São Paulo, SP</p>
+          
+          <div class="social-links">
+            <a href="https://github.com/MattSouuza" target="_blank"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    </main>
+  </body> 
+  <footer>
+    <p>© 2025 Matheus Souza. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    // Menu mobile
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    mobileToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // Scroll suave
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+        // Fecha menu mobile
+        navLinks.classList.remove('active');
+      });
+    });
+
+    // Formulário (exemplo simples)
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Mensagem enviada com sucesso! Entrarei em contato em breve 🙌');
+      this.reset();
+    });
+  </script>
+</body>
+</html>
